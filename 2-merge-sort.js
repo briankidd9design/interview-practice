@@ -45,7 +45,7 @@ function mergeSort(array) {
 }
 
 // Conquer part of the Divide and Conquer methodology of this algorithm
-function merge(left, right, result) {
+function merge(left, right, resultArray) {
   // i to iterate over the left partition
   // j to iterate over the right partition
   // k to iteerate over the result array
@@ -58,19 +58,19 @@ function merge(left, right, result) {
     if (left[i] <= right[j]) {
       // if the value in the left array is smaller than the value in the right array, then add that value to the result array (whose index is being tracked by k) and then increment both the value in the result array and the left array by 1
       // copy the item i of the left parition to the index result of k of the final, result merged/sorted array
-      result[k++] = left[i++];
+      resultArray[k++] = left[i++];
     } else {
       // if the value in the right array is smaller than the value in the left array, then add that value to the result array (whose index is being tracked by k) and then increment both the value in the result array and the right array by 1
-      result[k++] = right[j++];
+      resultArray[k++] = right[j++];
     }
   }
   // if there are any remaining values in either array, we need another while loop
 
   while (i < left.length) {
-    result[k++] = left[i++];
+    resultArray[k++] = left[i++];
   }
   while (j < right.length) {
-    result[k++] = right[j++];
+    resultArray[k++] = right[j++];
   }
 }
 

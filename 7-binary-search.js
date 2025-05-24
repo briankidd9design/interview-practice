@@ -10,7 +10,7 @@ function binarySearch(array, val) {
     let middle = Math.floor((lower + upper) / 2);
 
     if (val === array[middle]) {
-      return `The value ${val} that you are looking for is located at index ${middle}`;
+      return `The value that you are searching for is located in index ${middle} of the array`;
     }
     if (val < array[middle]) {
       upper = middle - 1;
@@ -20,6 +20,5 @@ function binarySearch(array, val) {
   }
   return `The value ${val} is not located in this array`;
 }
-
-let binSrch = binarySearch(numsArray, 18);
+let binSrch = binarySearch(numsArray, 2);
 console.log(binSrch);

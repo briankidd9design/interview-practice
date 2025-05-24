@@ -14,16 +14,15 @@ function quickSort(array, start, end) {
 }
 
 function partition(array, start, end) {
-  let boundary = start - 1;
   let pivot = array[end];
+  let boundary = start - 1;
   for (let i = start; i <= end; i++) {
     if (array[i] <= pivot) {
       boundary++;
-      [array[boundary], array[i]] = [array[i], array[boundary]];
+      [array[i], array[boundary]] = [array[boundary], array[i]];
     }
   }
   return boundary;
 }
-
 quickSort(numsArray, 0, numsArray.length - 1);
 console.log(numsArray);

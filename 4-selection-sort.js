@@ -9,7 +9,7 @@ function selectionSort(array) {
     // initially, min value is the first item of the array
     let minValueIndex = i;
     // find the minValueIndex of the unsorted part of the array
-    // use j = i + 1 because this will ensure that the alorithm does not try to sort the part of the array that is already sorted
+    // use j = i + 1 because this will ensure that the algorithm does not try to sort the part of the array that is already sorted
     for (let j = i + 1; j < array.length; j++) {
       // if the item at index j is smaller than the item at index minValueIndex then make the item at index j the new minValueIndex
       if (array[j] < array[minValueIndex]) {
@@ -18,7 +18,10 @@ function selectionSort(array) {
     }
     // swap the old min value at index i with the new min value at index j
     // now the new minValue is in the correct place in the array, as the alogrithm will then look for the next minValue and place it after the current minValue
-    [array[i], array[minValueIndex]] = [array[minValueIndex], array[i]];
+    // [array[i], array[minValueIndex]] = [array[minValueIndex], array[i]];
+    let temp = array[i];
+    array[i] = array[minIndexValue];
+    array[minValueIndex] = temp;
   }
   return array;
 }
