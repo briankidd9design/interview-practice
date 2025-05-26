@@ -1,3 +1,5 @@
+// Debouncing with JavaScript
+// KC: https://www.youtube.com/watch?v=cjIswDCKgu0
 const input = document.querySelector("input");
 const defaultText = document.getElementById("default");
 const debounceText = document.getElementById("debounce");
@@ -30,6 +32,8 @@ const updateDefaultText = (text) => {
 const updateDebounceText = debounce((text) => {
   // takes in the text we want to update...takes debounce text and updates the debounce text field
   debounceText.textContent = text;
+});
+const updateDebounceMousemove = debounce(() => {
   incrementCount(debounceTextMousemove);
 });
 // debounce is passed a callback function and a delay
@@ -39,7 +43,7 @@ const updateDebounceText = debounce((text) => {
 // 3. Then starts a new 1-second timer
 // The debounce function waits until there is a 1-second delay before it runs
 // What is the callback in this function? Is it text?
-// With debounce, if you have many changes happening all at once, you can "batch" them up and send them all at once making the input less expensive for both querying the db and ergo using up user data, which can result in a slowed-down UX.
+// With debounce, if you have many changes happening all at once, you can "batch" them up and send them all at once making the input less expensive for querying the db and ergo using up user data, which can result in a slowed-down UX.
 function debounce(cb, delay = 1000) {
   // our function is forced to wait one second before it actually runs
   // The timeout function is cleared out inside the returned function every time the user inputs data
@@ -58,10 +62,15 @@ function debounce(cb, delay = 1000) {
 // Scrolling and re-sizing make a lot of event calls so you can limit the amount of power the CPU uses by using a throttle function
 const updateThrottleText = throttle_basic((text) => {
   throttleText.textContent = text;
-  incrementCount(throttleTextMousemove);
 });
 const updateThrottleTextAdvanced = throttle_advanced((text) => {
   throttleTextAdvanced.textContent = text;
+  incrementCount(throttleTextAdvancedMousemove);
+});
+const updateThrottleMousemoveBasic = throttle_basic(() => {
+  incrementCount(throttleTextMousemove);
+});
+const updateThrottleMousemoveAdvanced = throttle_advanced(() => {
   incrementCount(throttleTextAdvancedMousemove);
 });
 // Throttle runs immediately when you call the function
@@ -87,7 +96,7 @@ function throttle_basic(cb, delay = 1000) {
 // For this function we are saving the last call that we made after we made a call
 // 1. We call throttle and it ran fine
 //2. If you call it a second time during the waiting period it saves that call and will exectute the throttle as soon as the delay is over so that more than one call per second is not executed
-//--this advanced throttle makes sure tho cache the last call and send it every time
+//--this advanced throttle makes sure to cache the last call and send it every time
 function throttle_advanced(cb, delay = 1000) {
   let shouldWait = false;
   // waitingArgs is the argument for the function call when we are actually waiting
@@ -95,10 +104,10 @@ function throttle_advanced(cb, delay = 1000) {
   let waitingArgs;
   const timeoutFunc = () => {
     // This conditional means nothing is waiting to happen
-    // For example, in the context of this function with a one-second dealay,  one event happens and then another event does not happen for another 3 seconds
+    // For example, in the context of this function with a one-second delay, one event happens and then another event does not happen for another second or whatever the delay is set to
     if (waitingArgs === null) {
       shouldWait = false;
-      // but what if we make two calls within the delay period? Then this part of the condition applies and makes sure both calls are sent
+      // but what if we make two calls within the delay period? Then this part of the condition applies (the else part) and makes sure both calls are sent
     } else {
       cb(...waitingArgs);
       waiting = null;
@@ -119,27 +128,11 @@ function throttle_advanced(cb, delay = 1000) {
   };
 }
 
-// const debouncedIncrementCount = debounce(incrementCount);
-// const throttledIncrementCount = throttle_basic(incrementCount);
-// const throttledIncrementCountAdvanced = throttle_advanced(incrementCount);
-// const defaultIncrementCount = updateDefaultText(incrementCount);
-
-// document.addEventListener("mousemove", (e) => {
-//   //   defaultIncrementCount(defaultTextMouseMove);
-//   updateDebounceText(debounceTextMouseMove);
-//   updateThrottleText(throttleTextMouseMove);
-//   updateThrottleTextAdvanced(throttleTextAdvancedMouseMove);
-// });
-
-// function incrementCount(element) {
-//   element.textContent = (parseInt(element.innerText) || 0) + 1;
-// }
-
 document.addEventListener("mousemove", (e) => {
   incrementCount(defaultTextMousemove);
-  updateDebounceText();
-  updateThrottleText();
-  updateThrottleTextAdvanced();
+  updateDebounceMousemove();
+  updateThrottleMousemoveBasic();
+  updateThrottleMousemoveAdvanced();
   // updateDebounceText(debounceTextMousemove);
 });
 function incrementCount(element) {
