@@ -5,7 +5,7 @@ const defaultText = document.getElementById("default");
 const debounceText = document.getElementById("debounce");
 const throttleText = document.getElementById("throttle");
 const throttleTextAdvanced = document.getElementById("throttle-advanced");
-// mousmove event tracker DOM elements
+// mousemove event tracker DOM elements
 const defaultTextMousemove = document.getElementById("default-mousemove");
 const debounceTextMousemove = document.getElementById("debounce-mousemove");
 const throttleTextMousemove = document.getElementById("throttle-mousemove");
