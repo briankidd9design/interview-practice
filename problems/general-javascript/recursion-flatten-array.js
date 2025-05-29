@@ -6,10 +6,12 @@ function flattenOutArray(inputArray) {
 function executeRecursion(index, inputArray, outputArray) {
   // base case
   if (index >= inputArray.length) return;
-  if (Array.isArray(inputArray[index])) {
-    executeRecursion(index, inputArray[index], outputArray);
+  // research why you need >= rather than ===
+  let item = inputArray[index];
+  if (Array.isArray(item)) {
+    executeRecursion(index, item, outputArray);
   } else {
-    outputArray.push(inputArray[index]);
+    outputArray.push(item);
   }
   executeRecursion(index + 1, inputArray, outputArray);
 }
