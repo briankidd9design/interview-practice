@@ -1,0 +1,19 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nav-link {
+  padding: 5px;
+}
