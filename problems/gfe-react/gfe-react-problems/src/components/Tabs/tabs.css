@@ -1,0 +1,19 @@
+.tabs-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.tab-items {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.active {
+  background-color: blue;
+}
+
+.tab {
+  color: white;
+}

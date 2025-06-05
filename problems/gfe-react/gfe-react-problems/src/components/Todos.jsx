@@ -27,6 +27,7 @@ export default function App() {
   // 5
   function handleAddTodo() {
     // setTasks([...tasks, { id: crypto.randomUUID(), label: newTask.trim() }]);
+    // const c = a(concat b) c -> (a, b);
     setTasks(
       tasks.concat({
         // id: id++,

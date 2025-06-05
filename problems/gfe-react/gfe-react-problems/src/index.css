@@ -17,3 +17,14 @@ body {
 .nav-link {
   padding: 5px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+input,
+textarea {
+  display: block;
+}
