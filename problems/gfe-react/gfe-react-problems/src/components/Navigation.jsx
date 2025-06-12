@@ -18,6 +18,9 @@ export default function Navigation() {
       <Link className="nav-link" to="/tabs">
         tabs
       </Link>
+      <Link className="nav-link" to="/job-board">
+        job board
+      </Link>
     </div>
   );
 }

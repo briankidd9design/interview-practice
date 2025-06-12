@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import BasicSubmitForm from "./components/BasicSubmitForm";
 import HolyGrailLayout from "./components/HolyGrailLayout";
 import TabsData from "./components/Tabs/TabsData";
+import JobBoard from "./components/JobBoard";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/submit-form-basic" element={<BasicSubmitForm />} />
           <Route path="/holy-grail-layout" element={<HolyGrailLayout />} />
           <Route path="/tabs" element={<TabsData />} />
+          <Route path="/job-board" element={<JobBoard />} />
         </Routes>
       </Router>
     </>

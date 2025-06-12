@@ -1,0 +1,43 @@
+h1#jobBoardTitle {
+  color: #ee6f2e;
+}
+.job-board {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f6ef;
+  padding: 0 2.5rem 0 2.5rem;
+}
+ul.job-board-list {
+  margin: 0;
+  padding: 0;
+}
+ul.job-board-list > li {
+  font-weight: 700;
+  border: 1px solid #eaeaea;
+  background-color: white;
+  list-style-type: none;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+ul.job-board-list > li p {
+  margin: 0.75rem 0 0 0;
+  font-weight: 300;
+}
+button#loadMoreJobs {
+  width: auto; /* Important: allows the button to size to its content */
+  /* align-self makes it so that the button does not take up 100 percent of the available space within the flex area */
+  align-self: flex-start;
+  /* Optional: aligns the button to the start of the flex container */
+  padding: 0.5em 1em;
+  background-color: #ee6f2e;
+  border-color: #ee5f2f;
+  border: transparent;
+  border-radius: 0.25em;
+  font-weight: 300;
+  color: #ffffff;
+}
+button#loadMoreJobs:hover {
+  background-color: #ee5f2f;
+  cursor: pointer;
+}
