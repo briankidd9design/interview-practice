@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  margin: 0;
+}
+.todo-item {
+  display: flex;
+}
+.todo-completed {
+  text-decoration: line-through;
+}

@@ -17,7 +17,9 @@ body {
 .nav-link {
   padding: 5px;
 }
-
+nav {
+  background-color: white;
+}
 form {
   display: flex;
   flex-direction: column;

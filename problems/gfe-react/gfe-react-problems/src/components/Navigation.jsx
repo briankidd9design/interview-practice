@@ -21,6 +21,12 @@ export default function Navigation() {
       <Link className="nav-link" to="/job-board">
         job board
       </Link>
+      <Link className="nav-link" to="/todo-basic">
+        todo basic
+      </Link>
+      <Link className="nav-link" to="/todo-simple">
+        todo simple
+      </Link>
     </div>
   );
 }

@@ -26,7 +26,7 @@ header {
   background-color: tomato;
 }
 
-nav {
+nav#holyGrail {
   width: 100px;
   background-color: coral;
 }

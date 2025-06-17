@@ -5,7 +5,7 @@ export default function HolyGrailLayout() {
     <>
       <header>Header</header>
       <div className="main-content">
-        <nav>Navigation</nav>
+        <nav id="holyGrail">Navigation</nav>
         <main>Main</main>
         <aside>Sidebar</aside>
       </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navigation from "./Navigation";
+import Navigation from "../Navigation";
 
 // let id= 0;
 // 2
@@ -21,20 +21,24 @@ export default function App() {
   // 1
   const [tasks, setTasks] = useState(INITIAL_TASKS);
   //   const [newTask, setNewTask] = useState("");
-  const [newTask, setNewTask] = useState("");
-  console.log(tasks);
+  const [newTask, setNewTask] = useState([]);
+  // console.log(tasks);
   // handle add a todo function options
   // 5
   function handleAddTodo() {
     // setTasks([...tasks, { id: crypto.randomUUID(), label: newTask.trim() }]);
     // const c = a(concat b) c -> (a, b);
+    // setTasks();
     setTasks(
       tasks.concat({
-        // id: id++,
         id: crypto.randomUUID(),
+        // trim will eliminate any space left by the users input
         label: newTask.trim(),
       })
     );
+    // setTasks([...tasks, {id: crypto.randomUUID(), label: newTask.trim() }])
+
+    // id: id++,
     // https://chatgpt.com/share/683cdb7e-4610-800d-91de-aee95a156eac
     // Do you ever want to push to the exisiting state but not use setState? Is this bad practice.
     // Yes, mutating state directly (like using tasks.push(...)) without calling setState is considered bad practice in React. Here's why:
@@ -57,15 +61,12 @@ export default function App() {
     //   id: crypto.randomUUID(),
     //   label: newTask.trim(),
     // });
-    setNewTask("");
   }
   // handle delete function options
   function handleDelete(id) {
     // setTasks(tasks.filter((task) => task.id !== id));
     // setTasks(tasks.filter((task) => task.id !== id));
-    const index = tasks.findIndex((item) => item.id === id);
-    tasks.splice(index, 1);
-    setTasks([...tasks]);
+    setTasks(tasks.filter((task) => task.id != id));
   }
 
   return (
@@ -81,6 +82,7 @@ export default function App() {
           <input
             aria-label="add new task"
             type="text"
+            // this value is directly tied to the react state
             value={newTask}
             placeholder="Add your task"
             // this creates the controlled component where the input is being tracked by React state
