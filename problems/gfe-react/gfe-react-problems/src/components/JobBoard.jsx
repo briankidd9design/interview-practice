@@ -28,7 +28,7 @@ export default function JobBoard() {
   // this helps with showing only six jobs per button click
   const [visibleJobs, setVisibleJobs] = useState(6);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -54,7 +54,8 @@ export default function JobBoard() {
       } catch (err) {
         /// enter error info
         console.log("Error fetching data", error);
-        setError(err.message || "Something went wrong");
+        setError(err.message || `Something went wrong. ${error}`);
+        error;
         setdata([]);
       } finally {
         setLoading(false);
@@ -97,24 +98,27 @@ export default function JobBoard() {
 
   return (
     <div className="job-board">
-      <h1> Hacker News Job Board</h1>
+      <h1 id="jobBoardTitle"> Hacker News Job Baord</h1>
       {loading && <p>Loading jobs...</p>}
       {!loading && (
-        <ul>
+        <ul className="job-board-list">
           {data.map((job) => (
             <li key={job.id}>
-              <a href={job.url} target="_blank" rel="noopener noreferrer">
-                {job.ittle}
+              <a href={job.url} target="_blank">
+                {job.title}
               </a>
               <p>
-                By {job.by} {formatTime(job.time)}
+                {" "}
+                By {job.by} • {formatTime(job.time)}
               </p>
             </li>
           ))}
         </ul>
       )}
       {data.length < allJobs.length && (
-        <button onClick={loadMoreJobs}>Load more jobs</button>
+        <button id="loadMoreJobs" onClick={loadMoreJobs}>
+          Load more jobs
+        </button>
       )}
     </div>
   );
