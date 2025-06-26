@@ -27,6 +27,9 @@ export default function Navigation() {
       <Link className="nav-link" to="/todo-simple">
         todo simple
       </Link>
+      <Link className="nav-link" to="/todos-local-storage">
+        todos local storage
+      </Link>
     </div>
   );
 }

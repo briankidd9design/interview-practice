@@ -11,3 +11,7 @@ ul li {
 .todo-completed {
   text-decoration: line-through;
 }
+
+.todo-list-container {
+  margin-left: 20rem;
+}

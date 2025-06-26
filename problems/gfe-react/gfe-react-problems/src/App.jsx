@@ -5,9 +5,9 @@ import BasicSubmitForm from "./components/BasicSubmitForm";
 import HolyGrailLayout from "./components/HolyGrailLayout";
 import TabsData from "./components/Tabs/TabsData";
 import JobBoard from "./components/JobBoard";
-import { TodoBasic } from './components/Todos/TodosBasic';
+import { TodoBasic } from "./components/Todos/TodosBasic";
 import { TodoSimple } from "./components/Todos/TodosSimple";
-
+import TodosLocalStorage from "./components/Todos/TodosLocalStorage";
 
 function App() {
   return (
@@ -21,7 +21,8 @@ function App() {
           <Route path="/tabs" element={<TabsData />} />
           <Route path="/job-board" element={<JobBoard />} />
           <Route path="/todo-basic" element={<TodoBasic />} />
-          <Route path="/todo-simple" element={<TodoSimple/>} />
+          <Route path="/todo-simple" element={<TodoSimple />} />
+          <Route path="/todos-local-storage" element={<TodosLocalStorage />} />
         </Routes>
       </Router>
     </>
