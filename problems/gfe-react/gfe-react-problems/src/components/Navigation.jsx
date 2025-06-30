@@ -30,6 +30,12 @@ export default function Navigation() {
       <Link className="nav-link" to="/todos-local-storage">
         todos local storage
       </Link>
+      <Link className="nav-link" to="/physical-fitness-list">
+        physical exercise list
+      </Link>
+      <Link className="nav-link" to="/accordion-one">
+        accordion-one
+      </Link>
     </div>
   );
 }

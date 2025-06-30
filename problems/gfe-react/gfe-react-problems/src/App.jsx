@@ -8,6 +8,8 @@ import JobBoard from "./components/JobBoard";
 import { TodoBasic } from "./components/Todos/TodosBasic";
 import { TodoSimple } from "./components/Todos/TodosSimple";
 import TodosLocalStorage from "./components/Todos/TodosLocalStorage";
+import { LocalStorage } from "./components/LocalStorage/LocalStorage";
+import AccordionParent from "./components/Accordion/AccordionParent";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/todo-basic" element={<TodoBasic />} />
           <Route path="/todo-simple" element={<TodoSimple />} />
           <Route path="/todos-local-storage" element={<TodosLocalStorage />} />
+          <Route path="/physical-fitness-list" element={<LocalStorage />} />
+          <Route path="/accordion-one" element={<AccordionParent />} />
         </Routes>
       </Router>
     </>
