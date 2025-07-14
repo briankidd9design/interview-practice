@@ -47,6 +47,8 @@ export default function JobBoard() {
           }
           return response.json();
         });
+        // A promise that resolves to x
+        // Takes an array of promises and return an array of promise resolutions
         const allDetails = await Promise.all(detailPromises);
         setAllJobs(allDetails);
         setdata(allDetails.slice(0, visibleJobs));

@@ -44,7 +44,7 @@ const updateDebounceMousemove = debounce(() => {
 // The debounce function waits until there is a 1-second delay before it runs
 // What is the callback in this function? Is it text?
 // With debounce, if you have many changes happening all at once, you can "batch" them up and send them all at once making the input less expensive for querying the db and ergo using up user data, which can result in a slowed-down UX.
-function debounce(cb, delay = 1000) {
+function debounce(cb, delay = 2000) {
   // our function is forced to wait one second before it actually runs
   // The timeout function is cleared out inside the returned function every time the user inputs data
   let timeout;

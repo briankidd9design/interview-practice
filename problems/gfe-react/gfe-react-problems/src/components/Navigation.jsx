@@ -21,6 +21,9 @@ export default function Navigation() {
       <Link className="nav-link" to="/job-board">
         job board
       </Link>
+      <Link className="nav-link" to="/job-board-advanced">
+        job board advanced
+      </Link>
       <Link className="nav-link" to="/todo-basic">
         todo basic
       </Link>

@@ -10,6 +10,7 @@ import { TodoSimple } from "./components/Todos/TodosSimple";
 import TodosLocalStorage from "./components/Todos/TodosLocalStorage";
 import { LocalStorage } from "./components/LocalStorage/LocalStorage";
 import AccordionParent from "./components/Accordion/AccordionParent";
+import JobBoardAdvanced from "./components/JobBoardAdv/JobBoardAdvanced";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/holy-grail-layout" element={<HolyGrailLayout />} />
           <Route path="/tabs" element={<TabsData />} />
           <Route path="/job-board" element={<JobBoard />} />
+          <Route path="/job-board-advanced" element={<JobBoardAdvanced />} />
           <Route path="/todo-basic" element={<TodoBasic />} />
           <Route path="/todo-simple" element={<TodoSimple />} />
           <Route path="/todos-local-storage" element={<TodosLocalStorage />} />
