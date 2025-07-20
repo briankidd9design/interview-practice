@@ -11,27 +11,34 @@ import TodosLocalStorage from "./components/Todos/TodosLocalStorage";
 import { LocalStorage } from "./components/LocalStorage/LocalStorage";
 import AccordionParent from "./components/Accordion/AccordionParent";
 import JobBoardAdvanced from "./components/JobBoardAdv/JobBoardAdvanced";
+import CustomButtons from "./components/CustomButtons/CustomButtons";
+import "./index.css";
+import Counter from "./components/Counter";
+import AsyncAwait from "./components/AsyncAwait";
+import VendingMachine from "./components/VendingMachine/VendingMachine";
 
 function App() {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route index path="/" element={<Home />} />
-          <Route path="/todo-list" element={<Todos />} />
-          <Route path="/submit-form-basic" element={<BasicSubmitForm />} />
-          <Route path="/holy-grail-layout" element={<HolyGrailLayout />} />
-          <Route path="/tabs" element={<TabsData />} />
-          <Route path="/job-board" element={<JobBoard />} />
-          <Route path="/job-board-advanced" element={<JobBoardAdvanced />} />
-          <Route path="/todo-basic" element={<TodoBasic />} />
-          <Route path="/todo-simple" element={<TodoSimple />} />
-          <Route path="/todos-local-storage" element={<TodosLocalStorage />} />
-          <Route path="/physical-fitness-list" element={<LocalStorage />} />
-          <Route path="/accordion-one" element={<AccordionParent />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route path="/counter" element={<Counter />} />
+        <Route path="/todo-list" element={<Todos />} />
+        <Route path="/async-await" element={<AsyncAwait />} />
+        <Route path="/submit-form-basic" element={<BasicSubmitForm />} />
+        <Route path="/holy-grail-layout" element={<HolyGrailLayout />} />
+        <Route path="/tabs" element={<TabsData />} />
+        <Route path="/job-board" element={<JobBoard />} />
+        <Route path="/job-board-advanced" element={<JobBoardAdvanced />} />
+        <Route path="/todo-basic" element={<TodoBasic />} />
+        <Route path="/todo-simple" element={<TodoSimple />} />
+        <Route path="/todos-local-storage" element={<TodosLocalStorage />} />
+        <Route path="/physical-fitness-list" element={<LocalStorage />} />
+        <Route path="/accordion-one" element={<AccordionParent />} />
+        <Route path="/custom-buttons" element={<CustomButtons />} />
+        <Route path="/vending-machine" element={<VendingMachine />} />
+      </Routes>
+    </Router>
   );
 }
 

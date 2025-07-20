@@ -54,9 +54,9 @@ export function LocalStorage() {
     <>
       <div className="local-storage">
         <input
-          aria-label="Enter new exercise"
+          aria-label="Enter a new todo to add to your todo list"
           type="text"
-          placeholder="add new exercise"
+          placeholder="Add a new exercise"
           value={newExercise}
           onChange={(e) => setNewExercise(e.target.value)}
         />

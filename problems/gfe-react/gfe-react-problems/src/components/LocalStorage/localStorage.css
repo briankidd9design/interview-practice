@@ -22,3 +22,7 @@ ul li {
 .local-storage {
   margin-left: 2rem;
 }
+
+button {
+  border: default;
+}

@@ -4,8 +4,11 @@ import Navigation from "./Navigation";
 export default function Home() {
   return (
     <>
-      <h1>Pick a Problem</h1>
       <Navigation />
+      <div className="home-header">
+        {" "}
+        <h1>Pick a Problem</h1>{" "}
+      </div>
     </>
   );
 }

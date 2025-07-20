@@ -14,9 +14,14 @@ const INITIAL_TODOS = [
 export default function TodosLocalStorage() {
   // const [todos, setTodos] = useState(INITIAL_TODOS);
   const [todos, setTodos] = useState(() => {
-    const stored = localStorage.getItem("todos");
-    if (stored === null) return INITIAL_TODOS;
-    return JSON.parse(stored);
+    try {
+      const stored = localStorage.getItem("todos");
+      if (stored === null) return INITIAL_TODOS;
+      return JSON.parse(stored);
+    } catch (error) {
+      console.error("There are no todos in local storage", error);
+      return INITIAL_TODOS;
+    }
   });
 
   const [newTodo, setNewTodo] = useState("");
@@ -35,14 +40,20 @@ export default function TodosLocalStorage() {
     setTodos(todos.filter((todo) => todo.id !== id));
   }
 
-  function toggleCompleted(id) {
-    setTodos((prevState) =>
-      prevState.map((todo) =>
-        todo.id === id
-          ? { ...todo, id: crypto.randomUUID(), completed: !todo.completed }
-          : todo
-      )
+  // function toggleCompleted(id) {
+  //   setTodos((prevState) =>
+  //     prevState.map((todo) =>
+  //       todo.id === id
+  //         ? { ...todo, id: crypto.randomUUID(), completed: !todo.completed }
+  //         : todo
+  //     )
+  //   );
+  // }
+  function toggleCompleted(checkedId) {
+    const newCheckedTodos = todos.map((todo) =>
+      checkedId === todo.id ? { ...todo, completed: !todo.completed } : todo
     );
+    setTodos(newCheckedTodos);
   }
   return (
     <div className="todo-list-container ">

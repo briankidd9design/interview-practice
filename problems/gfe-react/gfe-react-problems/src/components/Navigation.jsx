@@ -6,8 +6,14 @@ export default function Navigation() {
       <Link className="nav-link" to="/">
         Home
       </Link>
+      <Link className="nav-link" to="/counter">
+        Counter
+      </Link>
       <Link className="nav-link" to="/todo-list">
         Todo List
+      </Link>
+      <Link className="nav-link" to="/async-await">
+        Async/Await
       </Link>
       <Link className="nav-link" to="/submit-form-basic">
         Submit Form Basic
@@ -38,6 +44,12 @@ export default function Navigation() {
       </Link>
       <Link className="nav-link" to="/accordion-one">
         accordion-one
+      </Link>
+      <Link className="nav-link" to="/custom-buttons">
+        custom-buttons
+      </Link>
+      <Link className="nav-link" to="/vending-machine">
+        vending machine
       </Link>
     </div>
   );
