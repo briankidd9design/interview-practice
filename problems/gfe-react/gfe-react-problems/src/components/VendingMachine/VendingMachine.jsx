@@ -67,6 +67,7 @@ function VendingMachine() {
       setFeedback(
         `${name} vended: Your change: $${(insertedNum - price).toFixed(2)}`
       );
+      setInsertedMoney("");
     }
   }
 
